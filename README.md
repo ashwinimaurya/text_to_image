@@ -1,4 +1,4 @@
-# text_to_image
+# Text To Image Generation Using Diffusion Models and Hugging Face Transformers
 
 ##### These modela are trained using GPU, running on CPU machine may give runtime errors.
 
