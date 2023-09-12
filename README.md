@@ -24,6 +24,8 @@ image = pipe(prompt).images[0]
 #### Show image 
 
 plt.imshow(image)
+![image](https://github.com/ashwinimaurya/text_to_image/assets/13278692/d3e0e789-f0cf-4b4a-9749-e6905f846634)
+
 
 ### 2. Using StableDiffusionPipeline and CompVis/stable-diffusion-v1-4
 
