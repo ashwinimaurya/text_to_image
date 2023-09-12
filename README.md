@@ -8,13 +8,21 @@ from diffusers import StableDiffusionPipeline, EulerDiscreteScheduler
 import torch
 from matplotlib import pyplot as plt
 
+#### Load the Stable Diffusion pipeline
+
 model_id = "stabilityai/stable-diffusion-2"
 scheduler = EulerDiscreteScheduler.from_pretrained(model_id, subfolder="scheduler")
 pipe = StableDiffusionPipeline.from_pretrained(model_id, scheduler=scheduler, torch_dtype=torch.float16)
 pipe = pipe.to("cuda")
 
+#### Text prompt 
 prompt = "a photo of an astronaut riding a horse on mars"
+
+#### Generate the image
 image = pipe(prompt).images[0]
+
+#### Show image 
+
 plt.imshow(image)
 
 ### 2. Using StableDiffusionPipeline and CompVis/stable-diffusion-v1-4
@@ -22,21 +30,19 @@ plt.imshow(image)
 import torch
 from diffusers import StableDiffusionPipeline
 
-# Load the Stable Diffusion pipeline
+#### Load the Stable Diffusion pipeline
 pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", torch_dtype=torch.float16)
 
-# Move the pipeline to the GPU for faster processing (optional)
+####  Move the pipeline to the GPU for faster processing (optional)
 pipe = pipe.to("cuda")
 
 prompt = "grocery store on moon"
 
-# Number of images to generate (you can change this)
-num_images = 1
-
-# Generate images based on the prompt
+####  Generate images based on the prompt
 images = pipe(prompt)
 
-# Access the generated image
+####  Access the generated image
 generated_image = images.images[0]
 
+#### Show image 
 plt.imshow(generated_image)
