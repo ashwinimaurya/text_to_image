@@ -36,7 +36,7 @@ pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", 
 ####  Move the pipeline to the GPU for faster processing (optional)
 pipe = pipe.to("cuda")
 
-prompt = "grocery store on moon"
+prompt = "Man Cooking food on Mars"
 
 ####  Generate images based on the prompt
 images = pipe(prompt)
@@ -46,3 +46,4 @@ generated_image = images.images[0]
 
 #### Show image 
 plt.imshow(generated_image)
+![image](https://github.com/ashwinimaurya/text_to_image/assets/13278692/a12a1a70-7cc8-412f-bf87-9de851d78ca0)
